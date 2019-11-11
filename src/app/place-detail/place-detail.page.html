@@ -6,6 +6,11 @@
       </ion-button>
     </ion-buttons>
     <ion-title>{{place.name}}</ion-title>
+    <ion-buttons slot="start">
+    <ion-button (click)="openMap()">
+      <ion-icon name="map"></ion-icon>
+    </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

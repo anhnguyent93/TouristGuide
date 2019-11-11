@@ -15,6 +15,7 @@ import {PlaceDetailPageModule} from './place-detail/place-detail.module';
 import {GooglePlus} from '@ionic-native/google-plus/ngx';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {Facebook} from '@ionic-native/facebook/ngx';
+import {LaunchNavigator} from '@ionic-native/launch-navigator/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import {Facebook} from '@ionic-native/facebook/ngx';
     GooglePlus,
     Facebook,
     NativeStorage,
+    LaunchNavigator,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

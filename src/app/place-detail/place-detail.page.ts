@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {IonSlides, LoadingController, ModalController, NavParams} from '@ionic/angular';
+import {LaunchNavigator} from '@ionic-native/launch-navigator/ngx';
 
 declare var google;
 
@@ -27,6 +28,7 @@ export class PlaceDetailPage implements OnInit {
 
   constructor(private modalController: ModalController,
               private navParams: NavParams,
+              private launchNavigator: LaunchNavigator,
   ) {
   }
 
@@ -57,5 +59,20 @@ export class PlaceDetailPage implements OnInit {
 
   round(input): number {
     return Math.round( input * 10 ) / 10;
+  }
+
+  openMap() {
+    this.launchNavigator.isAppAvailable(this.launchNavigator.APP.GOOGLE_MAPS).then( isAvailable => {
+      let app;
+      if (isAvailable) {
+        app = this.launchNavigator.APP.GOOGLE_MAPS;
+      } else {
+        console.warn('Google Maps not available - falling back to user selection');
+        app = this.launchNavigator.APP.USER_SELECT;
+      }
+      this.launchNavigator.navigate(this.place.formatted_address, {
+        app
+      });
+    });
   }
 }
