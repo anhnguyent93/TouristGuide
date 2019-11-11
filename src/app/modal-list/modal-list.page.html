@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModalData()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <form [formGroup]="directionForm">
+      <ion-item>
+        <input class="input" #autoCompleteInput formControlName="placeName" onfocus="this.value=''"/>
+      </ion-item>
+    </form>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of places; trackBy: trackByFn">
+      <ion-card (click)="openDetailModal(item)">
+        <ion-card-header class="ion-text-center">
+          <ion-card-title color="primary">{{ item.name }}</ion-card-title>
+          <ion-card-subtitle>{{ item.vicinity }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content font-size="18px">
+          <img *ngIf="item.photos" [src]="item.photos[0].getUrl()"/>
+        </ion-card-content>
+      </ion-card>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal()">
+      <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

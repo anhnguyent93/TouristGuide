@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome to TouristGuide</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="directionForm">
+    <ion-item>
+      <input class="input" #autoCompleteInput formControlName="placeName" onfocus="this.value=''"/>
+    </ion-item>
+  </form>
+  <ion-grid class="ion-no-margin ion-no-padding">
+    <ion-row>
+      <ion-col size="4" *ngFor="let item of types">
+        <ion-button color="light" expand="full" size="large" (click)="openModal(item.type)">
+          <ion-icon [src]="item.src"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

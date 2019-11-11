@@ -1,0 +1,67 @@
+h1 {
+  color: white;
+}
+.scroll-content {
+  margin-top: 0 !important;
+}
+.logo {
+  width: 30%;
+  height: auto;
+  padding-top: 10vh;
+  margin-bottom: 8vh;
+}
+
+.slide-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: transparent;
+}
+.slide-zoom {
+  background: rgba(32, 32, 32, 0.2) !important;
+  height: 100%;
+}
+ion-slides {
+  height: 100vh;
+}
+ion-item {
+  --background: transparent;
+}
+p{color: white !important;}
+::-webkit-input-placeholder {
+  color: white !important;
+}
+
+ion-content {
+  //color: white;
+  //position: absolute;
+  //top: 0;
+  //padding: 15vw;
+  //text-align: center;
+  //width: 100%;
+  //height: 100%;
+  //margin: 0 auto;
+  //z-index: 2;
+  --background: url("../../assets/img/bg.jpg") 0 0/100% 100% no-repeat;
+}
+
+ion-list {
+  background: transparent !important;
+}
+
+ion-input {
+  --color: white;
+}
+
+
+.container {
+  position: absolute;
+  top: 25%;
+  padding: 15vw;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  vertical-align: middle;
+}
+
