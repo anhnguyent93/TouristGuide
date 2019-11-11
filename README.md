@@ -32,3 +32,7 @@ In this App, the users can do the following:
 - Webstorm(IDE)
 - GitHub
 - ZenHub
+ ## Link
+ 
+- Slide: https://drive.google.com/file/d/1VqBr5RbihzaIQF6lFpUhSOK3yXGEMTNb/view?usp=sharing
+- Video: https://www.youtube.com/watch?v=gz4Y8c8hB64
